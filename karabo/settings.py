@@ -18,11 +18,11 @@ from django.contrib import messages
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 MESSAGE_TAGS = {
-    message.DEBUG: 'info',
-    message.INFO: 'info',
-    message.SUCCESS: 'success',
-    message.WARNING: 'warning',
-    message.ERROR: 'danger',
+    messages.DEBUG: 'info',
+    messages.INFO: 'info',
+    messages.SUCCESS: 'success',
+    messages.WARNING: 'warning',
+    messages.ERROR: 'danger',
 }
 
 # Quick-start development settings - unsuitable for production
@@ -34,7 +34,7 @@ SECRET_KEY = 'django-insecure-1#jc!1ww4!7u8=h3i)yj_ob&#w8#osuyf&b1n1abpp*j3bvml1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://127.0.0.1:8000/', 'https://8000-tehcentr2014-djocapp-ip3vj2645q3.ws-eu114.gitpod.io/', '8000-tehcentr2014-djocapp-ip3vj2645q3.ws-eu114.gitpod.io']
 
 
 # Application definition
@@ -152,5 +152,5 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'tehcentr1920@gmail.com'
-EMAIL_HOST_PASSWORD = 'Centrteh#R1'
+EMAIL_HOST_PASSWORD = ''
 DEFAULT_FROM_EMAIL = 'tehcentr1920@gmail.com'
