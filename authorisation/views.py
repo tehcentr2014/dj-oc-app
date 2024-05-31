@@ -7,9 +7,10 @@ from django.contrib import messages
 def login(request):
     return render(request, 'authorisation/login.html', {})
 
+
 def register(request):
     if request.method == 'POST':
-        username = request.POST['username']
+        #username = request.POST['username']
         email = request.POST['email'].replace(' ','').lower()
         password1 = request.post['password1']
         password2 = request.post['password2']
@@ -23,10 +24,10 @@ def register(request):
             messages.error(request,"A user with the email address: {} already exists, please use a different email".format(email))    
             return redirect('register')
 
-        newUser.objects.create_user(email=email, username=email, password=password2)
+        newUser = User.objects.create_user(email=email, username=email, password=password2)
         newUser.save()   
 
-        auth.login(request,user)
+        auth.login(request, newUser)
         return redirect ('home')
 
 
