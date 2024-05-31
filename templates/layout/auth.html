@@ -138,6 +138,16 @@
               </div>
               <!-- /Logo -->
 
+
+              <div class="alert alert-danger" role="alert">This is a danger alert — check it out!</div>
+
+              {% for message in message %}
+              <div class="alert alert-{{message.tags}} mb-4" role="alert">
+                <strong> {{message}}</strong>
+              </div>
+
+              {% endfor %}
+
               {% block body %}
               
               {% endblock %}

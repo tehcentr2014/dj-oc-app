@@ -122,7 +122,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-LOGIN_REDIRECT_URL = 'dashboard'
+#LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
 
 DJANGORESIZED_DEFAULT_SIZE = [500, 500]
