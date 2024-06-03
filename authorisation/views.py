@@ -6,19 +6,18 @@ from django.contrib import messages
 # Create your views here.
 def login(request):
     return render(request, 'authorisation/login.html', {}) 
-   
 
+   
 def register(request):
     if request.method == 'POST':
         #username = request.POST['username']
         email = request.POST['email'].replace(' ','').lower()
-        password1 = request.post['password1']
-        password2 = request.post['password2']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
 
         if not password1 == password2:
             messages.error(request, "Password don't match")
             return redirect('register')
-
 
         if User.objects.filter(email=email).exists():
             messages.error(request,"A user with the email address: {} already exists, please use a different email".format(email))    
@@ -28,8 +27,8 @@ def register(request):
         newUser.save()   
 
         auth.login(request,newUser)
-        #return redirect ('home')
-        return render(request, 'landing/index.html', {})
+        return redirect ('home')
+        #return render(request, 'landing/index.html', {})
 
         #print('Username submitted was: {}'.format(username))
     return render(request, 'authorisation/register.html', {})
