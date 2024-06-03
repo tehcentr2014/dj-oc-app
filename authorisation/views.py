@@ -7,6 +7,8 @@ from django.contrib import messages
 def login(request):
     return render(request, 'authorisation/login.html', {}) 
 
+def home(request):
+    return render(request, 'landing/index.html', {})
    
 def register(request):
     if request.method == 'POST':
