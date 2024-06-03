@@ -35,7 +35,7 @@ SECRET_KEY = 'django-insecure-1#jc!1ww4!7u8=h3i)yj_ob&#w8#osuyf&b1n1abpp*j3bvml1
 DEBUG = True
 
 ALLOWED_HOSTS = ['http://127.0.0.1:8000/', 'https://8000-tehcentr2014-djocapp-ip3vj2645q3.ws-eu114.gitpod.io/', '8000-tehcentr2014-djocapp-ip3vj2645q3.ws-eu114.gitpod.io']
-
+CSRF_TRUSTED_ORIGINS = ['https://8000-tehcentr2014-djocapp-ip3vj2645q3.ws-eu114.gitpod.io', 'http://8000-tehcentr2014-djocapp-ip3vj2645q3.ws-eu114.gitpod.io/index.html']
 
 # Application definition
 

@@ -5,8 +5,8 @@ from django.contrib import messages
 
 # Create your views here.
 def login(request):
-    return render(request, 'authorisation/login.html', {})
-
+    return render(request, 'authorisation/login.html', {}) 
+   
 
 def register(request):
     if request.method == 'POST':
@@ -27,9 +27,9 @@ def register(request):
         newUser = User.objects.create_user(email=email, username=email, password=password2)
         newUser.save()   
 
-        auth.login(request, newUser)
-        return redirect ('home')
-
+        auth.login(request,newUser)
+        #return redirect ('home')
+        return render(request, 'landing/index.html', {})
 
         #print('Username submitted was: {}'.format(username))
     return render(request, 'authorisation/register.html', {})
