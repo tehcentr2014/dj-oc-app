@@ -5,6 +5,19 @@ from django.contrib import messages
 
 # Create your views here.
 def login(request):
+        if request.method == 'POST':
+        email = request.POST['email'].replace(' ','').lower()
+        password = request.POST['password']
+
+        user = auth.authenticate(username=email, password=password)
+        
+        if user:
+            auth.login(request,newUser)
+            return redirect ('home')
+        else: 
+            message.error(request, "Invalid Credentials or User does not Exists")
+            return redirect('register') 
+
     return render(request, 'authorisation/login.html', {}) 
 
 def home(request):
