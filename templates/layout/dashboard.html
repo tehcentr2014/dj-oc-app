@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 
 <!-- =========================================================
@@ -17,7 +19,7 @@
   class="light-style layout-menu-fixed"
   dir="ltr"
   data-theme="theme-default"
-  data-static/assets_auth-path="{% static 'static/assets_auth' %}"
+  data-assets-path="{% static 'assets_auth' %}"
   data-template="vertical-menu-template-free"
 >
   <head>
@@ -558,7 +560,7 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="{% url '' %}">
+                      <a class="dropdown-item" href="{% url 'logout' %}">
                         <i class="bx bx-power-off me-2"></i>
                         <span class="align-middle">Log Out</span>
                       </a>
