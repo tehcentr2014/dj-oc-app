@@ -8,3 +8,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import user_passes_test
 
 # Create your views here.
+@login_required
+def home (request):
+
+    context = {}
+    return render(request, 'dashboard/home.html', context)
