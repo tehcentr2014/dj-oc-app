@@ -3,49 +3,51 @@ from django.contrib.auth.models import User, auth
 from django.http import HttpResponse
 from django.contrib import messages
 
-# Create your views here.
+##Other AUTH Imports
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import user_passes_test
+
+# Create your views here
 def login(request):
-        if request.method == 'POST':
-        email = request.POST['email'].replace(' ','').lower()
+    if request.method == 'POST':
+        email = request.POST['email'].replace(' ', '').lower()
         password = request.POST['password']
 
-        user = auth.authenticate(username=email, password=password)
-        
-        if user:
-            auth.login(request,newUser)
-            return redirect ('home')
-        else: 
-            message.error(request, "Invalid Credentials or User does not Exists")
-            return redirect('register') 
+        # Authenticate using email as username
+        user = auth.authenticate(username=email, password=password)  # Correct authentication
 
-    return render(request, 'authorisation/login.html', {}) 
+        if user:
+            auth.login(request, user)
+            return redirect('home')
+        else:
+            messages.error(request, "Invalid Credentials or User does not exist")
+            return redirect('login')  # Redirect to login instead of register if credentials are invalid
+
+    return render(request, 'authorisation/login.html', {})
 
 def home(request):
     return render(request, 'landing/index.html', {})
-   
+
 def register(request):
     if request.method == 'POST':
-        #username = request.POST['username']
-        email = request.POST['email'].replace(' ','').lower()
+        email = request.POST['email'].replace(' ', '').lower()
         password1 = request.POST['password1']
         password2 = request.POST['password2']
 
-        if not password1 == password2:
-            messages.error(request, "Password don't match")
+        if password1 != password2:
+            messages.error(request, "Passwords don't match")
             return redirect('register')
 
         if User.objects.filter(email=email).exists():
-            messages.error(request,"A user with the email address: {} already exists, please use a different email".format(email))    
+            messages.error(request, f"A user with the email address: {email} already exists, please use a different email")
             return redirect('register')
 
-        newUser = User.objects.create_user(email=email, username=email, password=password2)
-        newUser.save()   
+        user = User.objects.create_user(email=email, username=email, password=password2)
+        user.save()
 
-        auth.login(request,newUser)
-        return redirect ('home')
-        #return render(request, 'landing/index.html', {})
+        auth.login(request, user)
+        return redirect('home')
 
-        #print('Username submitted was: {}'.format(username))
     return render(request, 'authorisation/register.html', {})
 
 
