@@ -20,19 +20,28 @@ def home (request):
     return render(request, 'dashboard/home.html', context)
 
 def profile(request):
-
     context = {}
+    profile = user.profile
+
+    # user = request.user
+    # if hasattr(user, 'profile'):
+    #     pass
+    # else:
+    #     profile=Profile.objects.create(user=user)
 
     if request.method == 'GET':
-        form = ProfileForm()
+        form = ProfileForm(instance=request.user.profile)
         context['form'] = form
         return render(request, 'dashboard/profile.html', context)
 
     if request.method == 'POST':
-        form  =  ProfileForm(request.POST)
+        form  =  ProfileForm(request.POST, instance=request.user.profile)
 
         if form.is_valid():
-            pass
-
+            form.save()
+            return redirect('profile')
+            # obj = form.save(commit=False)
+            # obj.user = request.user
+            # obj.save()
 
     return render(request, 'dashboard/profile.html', context)

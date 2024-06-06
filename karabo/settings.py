@@ -47,7 +47,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     ##Third Party Apps
-    'crispy_forms'
+    'crispy_forms',
+    'crispy_bootstrap5',
+    #'crispy_bootstrap4',  # For Bootstrap 4 support
     # Created Apps
     'landing',
     'authorisation',
@@ -83,7 +85,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'karabo.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -159,3 +160,6 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'tehcentr1920@gmail.com'
 EMAIL_HOST_PASSWORD = ''
 DEFAULT_FROM_EMAIL = 'tehcentr1920@gmail.com'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
