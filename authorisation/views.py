@@ -31,6 +31,7 @@ def login(request):
 
         # Authenticate using email as username
         user = auth.authenticate(username=email, password=password)  # Correct authentication
+ 
 
         if user:
             auth.login(request, user)
