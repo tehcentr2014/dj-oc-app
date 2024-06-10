@@ -37,9 +37,9 @@ class Profile(models.Model):
             self.date_created = timezone.localtime(timezone.now())
         if self.uniqueId is None:
             self.uniqueId = str(uuid4()).split('-')[4]
-            self.slug = slugify('{}{}'.format(self.user.first_name, self.user.email))
+            self.slug = slugify('{}{}{}'.format(self.user.first_name, self.user.last_name, self.user.email).split('-')[4])
 
 
-        self.slug = slugify('{}{}'.format(self.user.first_name, self.user.email))
+        self.slug = slugify('{}{}{}'.format(self.user.first_name, self.user.last_name, self.user.email).split('-')[4])
         self.last_updated = timezone.localtime(timezone.now())
         super(Profile, self).save(*args, **kwargs)
