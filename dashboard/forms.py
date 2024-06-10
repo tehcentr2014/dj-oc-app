@@ -3,7 +3,7 @@ from .models import *
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, Row, Column
 
-class ProfileForm(forms.Form):
+class ProfileForm(forms.ModelForm):
     addressLine1 = forms.CharField(
                     required = True,
                     label='Address Line 1',

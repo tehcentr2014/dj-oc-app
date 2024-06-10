@@ -37,6 +37,9 @@ DEBUG = True
 ALLOWED_HOSTS = ['http://127.0.0.1:8000/', 'https://8000-tehcentr2014-djocapp-ip3vj2645q3.ws-eu114.gitpod.io/', '8000-tehcentr2014-djocapp-ip3vj2645q3.ws-eu114.gitpod.io']
 CSRF_TRUSTED_ORIGINS = ['https://8000-tehcentr2014-djocapp-ip3vj2645q3.ws-eu114.gitpod.io', 'http://8000-tehcentr2014-djocapp-ip3vj2645q3.ws-eu114.gitpod.io/index.html']
 
+
+DJANGO_SETTINGS_MODULE =['karabo.settings']
+
 # Application definition
 
 INSTALLED_APPS = [
