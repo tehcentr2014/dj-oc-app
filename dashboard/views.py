@@ -9,6 +9,8 @@ from django.contrib.auth.decorators import login_required
 # Local Imports
 from .forms import *
 from .models import *
+#from .forms import ProfileForm, ProfileImageForm  # Explicitly import the forms
+from .models import Profile
 
 # Create your views here.
 @login_required
@@ -43,6 +45,5 @@ def profile(request):
         else:
             messages.error(request, 'Please correct the error below.')
             
-    
     context['form'] = form  # In case of a POST request, we also need to pass the form to the context
     return render(request, 'dashboard/profile.html', context)

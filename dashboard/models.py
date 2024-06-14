@@ -19,27 +19,30 @@ class Profile(models.Model):
     postalCode = models.CharField(null=True, blank=True, max_length=100)
     profileImage = ResizedImageField(size=[200, 200], quality=90, upload_to='profile_images')
 
-    #Related Variables
-    #user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
-
-    #Utility Variable
-    uniqueId = models.CharField(null=True, blank=True, max_length=100)
+    # Utility Variables
+    uniqueId = models.CharField(null=True, blank=True, max_length=100, unique=True)
     slug = models.SlugField(max_length=500, unique=True, blank=True, null=True)
     date_created = models.DateTimeField(blank=True, null=True)
     last_updated = models.DateTimeField(blank=True, null=True)
 
     def __str__(self):
-        return '{}{}'.format(self.user.first_name, self.user.email)
-
+        return '{} {}'.format(self.user.first_name, self.user.email)
 
     def save(self, *args, **kwargs):
         if self.date_created is None:
             self.date_created = timezone.localtime(timezone.now())
+        
         if self.uniqueId is None:
-            self.uniqueId = str(uuid4()).split('-')[4]
-            self.slug = slugify('{}{}{}'.format(self.user.first_name, self.user.last_name, self.user.email).split('-')[4])
+            self.uniqueId = str(uuid4())
 
+        if not self.slug:
+            base_slug = slugify('{}-{}-{}'.format(self.user.first_name, self.user.last_name, self.user.email))
+            unique_slug = base_slug
+            num = 1
+            while Profile.objects.filter(slug=unique_slug).exists():
+                unique_slug = '{}-{}'.format(base_slug, num)
+                num += 1
+            self.slug = unique_slug
 
-        self.slug = slugify('{}{}{}'.format(self.user.first_name, self.user.last_name, self.user.email).split('-')[4])
         self.last_updated = timezone.localtime(timezone.now())
         super(Profile, self).save(*args, **kwargs)
