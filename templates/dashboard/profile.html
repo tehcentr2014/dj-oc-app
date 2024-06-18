@@ -42,6 +42,7 @@
                 <form class="" action="#" method="post" enctype="multipart/form-data">
                   {% csrf_token %}
                   {{image_form|crispy}}
+                  
                   <button type="submit" class="btn btn-outline-primary mb-4 mt-3">
                     <span class="d-none d-sm-block">Save Image</span>
                   </button>

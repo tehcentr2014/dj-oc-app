@@ -24,7 +24,7 @@ def profile(request):
     user_profile = request.user.profile
 
     if request.method == 'GET':
-        form = ProfileForm(instance=user_profile)
+        form = ProfileForm(instance=user_profile, user=request.user)
         image_form = ProfileImageForm(instance=user_profile)
         context['form'] = form
         context['image_form'] = image_form
