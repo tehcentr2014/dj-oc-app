@@ -11,8 +11,14 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 import os
 from django.contrib import messages
+#import environ
+#import dj_database_url
+from dotenv import load_dotenv
+if os.path.isfile('env.py'):
+    import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,6 +36,16 @@ MESSAGE_TAGS = {
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-1#jc!1ww4!7u8=h3i)yj_ob&#w8#osuyf&b1n1abpp*j3bvml1'
+
+#OPENAI_API_KEY = config('OPENAI_API_KEY')
+#OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Fetch the API key
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
