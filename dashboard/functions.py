@@ -1,20 +1,18 @@
 import os
 from django.conf import settings
-from openai import OpenAI
-
+import openai
 from openai import OpenAI
 from dotenv import load_dotenv
 
+
 #client = OpenAI()
 # Load API Key from evironment variable or secret managment service
-#openai.api_key = settings.OPENAI_API_KEY
-#openai.api_key = os.getenv("OPENAI_API_KEY")
-
 # Load environment variables from .env file
 load_dotenv()
 
 # Load API Key from environment variable or secret management service
-api_key = os.getenv("OPENAI_API_KEY")
+#api_key = os.getenv("OPENAI_API_KEY")
+api_key = settings.OPENAI_API_KEY
 
 
 if not api_key:
@@ -22,8 +20,12 @@ if not api_key:
 
 client = OpenAI(api_key=api_key)
 
-# Set the API key for openai module
+
+#blog_topics = []
+
 def generateBlogTopicIdeas(topic, keywords):
+    blog_topics = []
+
     response = client.completions.create(model="gpt-3.5-turbo-instruct",
     prompt=f"Generate blog topic ideas on the following topic: {topic}\nKeywords: {keywords}",
     temperature=0.7,
@@ -31,4 +33,50 @@ def generateBlogTopicIdeas(topic, keywords):
     top_p=1,
     frequency_penalty=0,
     presence_penalty=0)
-    return response
+
+    if 'choices' in response:
+        if len(response['choices'])>0:
+            res = response['choices'][0]['text']
+        else:
+            return []
+    else:
+        return [] 
+
+    a_list = res.split('*')    
+    if len(a_list) > 0:
+        for blog in a_list:
+            blog_topics.append(blog)
+    else:
+        return []
+
+    return blog_topics    
+
+
+def generateBlogSectionHeadings(topic, keywords):
+    response = client.completions.create(model="gpt-3.5-turbo-instruct",
+    prompt="Generate blog section headings and section titles, based on the following blog section topic.\nTopic: {}\nKeywords: {}\n*".format(topic, keywords),
+    temperature=0.7,
+    max_tokens=300,
+    top_p=1,
+    frequency_penalty=0,
+    presence_penalty=0)
+
+    if 'choices' in response:
+        if len(response['choices'])>0:
+            res = response['choices'][0]['text']
+        else:
+            res = None
+    else:
+        res = None 
+        
+    return response    
+
+#topic = 'summer fashion ideas'
+#keywords = 'summer, fashion, clothes'
+
+# res = generateBlogTopicIdeas(topic, keywords).replace('\n', '')
+# b_list = res.split('*')
+# for blog in b_list:
+#     blog_topics.append(blog)
+#     print ('\n')
+#     print (blog)
