@@ -27,29 +27,31 @@ def generateBlogTopicIdeas(topic, keywords):
     blog_topics = []
 
     response = client.completions.create(model="gpt-3.5-turbo-instruct",
-    prompt=f"Generate blog topic ideas on the following topic: {topic}\nKeywords: {keywords}",
-    temperature=0.7,
-    max_tokens=300,
-    top_p=1,
-    frequency_penalty=0,
-    presence_penalty=0)
+      prompt=f"Generate blog topic ideas on the following topic: {}\nKeywords: {} \n*".format(topic, keywords),
+      temperature=0.7,
+      max_tokens=300,
+      top_p=1,
+      frequency_penalty=0,
+      presence_penalty=0)
 
     if 'choices' in response:
         if len(response['choices'])>0:
             res = response['choices'][0]['text']
         else:
-            return []
-    else:
-        return [] 
-
-    a_list = res.split('*')    
-    if len(a_list) > 0:
-        for blog in a_list:
-            blog_topics.append(blog)
+           return []
     else:
         return []
 
-    return blog_topics    
+    a_list = res.split('*')
+    return res
+
+    # if len(a_list) > 0:
+    #     for blog in a_list:
+    #         blog_topics.append(blog)
+    # else:
+    #     return []
+
+    # return blog_topics    
 
 
 def generateBlogSectionHeadings(topic, keywords):
@@ -69,10 +71,7 @@ def generateBlogSectionHeadings(topic, keywords):
     else:
         res = None 
         
-    return response    
-
-#topic = 'summer fashion ideas'
-#keywords = 'summer, fashion, clothes'
+    return res    
 
 # res = generateBlogTopicIdeas(topic, keywords).replace('\n', '')
 # b_list = res.split('*')

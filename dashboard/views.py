@@ -45,7 +45,7 @@ def profile(request):
     context['image_form'] = image_form  # Ensure both forms are passed to the context
     return render(request, 'dashboard/profile.html', context)
 
-@login_required
+#@login_required
 def blogTopic(request):
     context = {}
 
@@ -63,9 +63,11 @@ def blogTopic(request):
 
     return render(request, 'dashboard/blog-topic.html', context)
 
-@login_required
+#@login_required
 def blogSections(request):
-    if 'blogTopics' not in request.session:
+    if 'blogTopics' in request.session:
+        pass
+    else:
         messages.error(request, "Start by creating blog topic ideas")
         return redirect('blog-topic')
 
