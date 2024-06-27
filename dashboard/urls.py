@@ -8,5 +8,5 @@ urlpatterns = [
 
     ###Blog Generation Routes
     path('generate-blog-topic', views.blogTopic, name='blog-topic'), 
-    path('generate-blog-sections', views.blogSections, name='blog-sections')
+    path('generate-blog-sections', views.blogSections, name='blog-sections'),
 ]

@@ -11,6 +11,7 @@ from .forms import *
 from .models import *
 from .functions import *
 
+
 # Create your views here.
 @login_required
 def home(request):
@@ -39,7 +40,7 @@ def profile(request):
             messages.success(request, 'Profile updated successfully')
             return redirect('profile')
         else:
-            messages.error(request, 'Please correct the error below.')
+            messages.error(request, 'Please correct the error bellow.')
 
     context['form'] = form  # In case of a POST request, we also need to pass the form to the context
     context['image_form'] = image_form  # Ensure both forms are passed to the context
@@ -58,7 +59,7 @@ def blogTopic(request):
             request.session['blogTopics'] = blogTopics
             return redirect('blog-sections')
         else:
-            messages.error(request, "Oops, please try again")
+            messages.error(request, "Oops, please try again.")
             return redirect('blog-topic')
 
     return render(request, 'dashboard/blog-topic.html', context)
@@ -71,7 +72,8 @@ def blogSections(request):
         messages.error(request, "Start by creating blog topic ideas")
         return redirect('blog-topic')
 
-    context = {}
-    context['blogTopics'] = request.session['blogTopics']
+    # context = {}
+    # context['blogTopics'] = request.session['blogTopics']
 
+    context = {'blogTopics': request.session['blogTopics']}
     return render(request, 'dashboard/blog-sections.html', context)
