@@ -1,0 +1,1 @@
+web: gunicorn karabo.wsgi --log-file
