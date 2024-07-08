@@ -54,7 +54,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://127.0.0.1:8000/', 'https://8000-tehcentr2014-djocapp-ip3vj2645q3.ws-eu114.gitpod.io/', '8000-tehcentr2014-djocapp-ip3vj2645q3.ws-eu114.gitpod.io', 'https://dj-oc-app-95fdf0716ca4.herokuapp.com','127.0.0.1', 'dj-oc-app-95fdf0716ca4.herokuapp.com']
+ALLOWED_HOSTS = ['.herokuapp.com', 'http://127.0.0.1:8000/', 'https://8000-tehcentr2014-djocapp-ip3vj2645q3.ws-eu114.gitpod.io/', '8000-tehcentr2014-djocapp-ip3vj2645q3.ws-eu114.gitpod.io', 'https://dj-oc-app-95fdf0716ca4.herokuapp.com','127.0.0.1', 'dj-oc-app-95fdf0716ca4.herokuapp.com']
 CSRF_TRUSTED_ORIGINS = ['https://8000-tehcentr2014-djocapp-ip3vj2645q3.ws-eu114.gitpod.io', 'http://8000-tehcentr2014-djocapp-ip3vj2645q3.ws-eu114.gitpod.io/index.html', 'https://dj-oc-app-95fdf0716ca4.herokuapp.com']
 
 
