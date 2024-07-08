@@ -38,7 +38,7 @@ MESSAGE_TAGS = {
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-1#jc!1ww4!7u8=h3i)yj_ob&#w8#osuyf&b1n1abpp*j3bvml1'
+#SECRET_KEY 
 
 #OPENAI_API_KEY = config('OPENAI_API_KEY')
 #OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
