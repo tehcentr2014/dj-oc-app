@@ -19,9 +19,11 @@ from dotenv import load_dotenv
 if os.path.isfile('env.py'):
     import env
 import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(db_from_env)
 
+
+SECRET_KEY = 'django-insecure-1#jc!1ww4!7u8=h3i)yj_ob&#w8#osuyf&b1n1abpp*j3bvml1'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -54,8 +56,8 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.herokuapp.com', 'http://127.0.0.1:8000/', 'https://8000-tehcentr2014-djocapp-ip3vj2645q3.ws-eu114.gitpod.io/', '8000-tehcentr2014-djocapp-ip3vj2645q3.ws-eu114.gitpod.io', 'https://dj-oc-app-95fdf0716ca4.herokuapp.com','127.0.0.1', 'dj-oc-app-95fdf0716ca4.herokuapp.com']
-CSRF_TRUSTED_ORIGINS = ['https://8000-tehcentr2014-djocapp-ip3vj2645q3.ws-eu114.gitpod.io', 'http://8000-tehcentr2014-djocapp-ip3vj2645q3.ws-eu114.gitpod.io/index.html', 'https://dj-oc-app-95fdf0716ca4.herokuapp.com']
+ALLOWED_HOSTS = ['.herokuapp.com', 'http://127.0.0.1:8000/', 'https://8000-tehcentr2014-djocapp-ip3vj2645q3.ws-eu114.gitpod.io/', '8000-tehcentr2014-djocapp-ip3vj2645q3.ws-eu115.gitpod.io', 'https://dj-oc-app-95fdf0716ca4.herokuapp.com','127.0.0.1', 'dj-oc-app-95fdf0716ca4.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://8000-tehcentr2014-djocapp-ip3vj2645q3.ws-eu115.gitpod.io', 'http://8000-tehcentr2014-djocapp-ip3vj2645q3.ws-eu114.gitpod.io/index.html', 'https://dj-oc-app-95fdf0716ca4.herokuapp.com']
 
 
 DJANGO_SETTINGS_MODULE =['karabo.settings']
@@ -113,23 +115,23 @@ WSGI_APPLICATION = 'karabo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-DATABASES = {     
-		'default': {
-      	'ENGINE': 'django.db.backends.postgresql',
-      	'HOST' : os.environ.get('POSTGRES_HOST', 'localhost'),
-      	'NAME': os.environ.get('POSTGRES_DB', 'db_name'),
-      	'USER': os.environ.get('POSTGRES_USER', 'username'),
-      	'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'password'),
-      	'PORT': os.environ.get('POSTGRES_PORT', '5432'),
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {     
+# 		'default': {
+#       	'ENGINE': 'django.db.backends.postgresql',
+#       	'HOST' : os.environ.get('POSTGRES_HOST', 'localhost'),
+#       	'NAME': os.environ.get('POSTGRES_DB', 'db_name'),
+#       	'USER': os.environ.get('POSTGRES_USER', 'username'),
+#       	'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'password'),
+#       	'PORT': os.environ.get('POSTGRES_PORT', '5432'),
+#     }
+# }
 
 
 # Password validation
