@@ -19,7 +19,7 @@
 
                 <h2 class="mb-3">Enter your blog idea below to generate blog topic suggestions</h2>
 
-              <form class="" action="#" method="post">
+              <form action="{% url 'blog-topic' %}" method="post">
                 {% csrf_token %}
 
                 <div class="mb-3">
