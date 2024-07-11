@@ -139,7 +139,7 @@ def blogTopic(request):
         audience = request.POST.get('audience')
         request.session['audience'] = audience
 
-        blogTopics = generateBlogTopicIdeas(blogIdea, keywords)
+        blogTopics = generateBlogTopicIdeas(blogIdea, audience, keywords)
         if blogTopics:
             request.session['blogTopics'] = blogTopics
             return redirect('blog-sections')

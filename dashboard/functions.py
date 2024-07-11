@@ -17,12 +17,12 @@ if not api_key:
 openai.api_key = api_key
 
 
-def generateBlogTopicIdeas(topic, keywords):
+def generateBlogTopicIdeas(topic, audience, keywords):
     try:
         response = openai.Completion.create(
             model="gpt-3.5-turbo-instruct",
-            prompt=f"Generate blog topic ideas on the following topic: {topic}\nKeywords: {keywords}\n*",
-            temperature=0.7,
+            prompt=f"Generate 5 blog topic ideas on the following topic: {topic}\nAudience: {audience}\nKeywords: {keywords}\n*",
+            temperature=0.7, 
             max_tokens=300,
             top_p=1,
             frequency_penalty=0,
