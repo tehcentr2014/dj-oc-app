@@ -13,7 +13,7 @@ gunicorn==22.0.0
 html2text==2024.2.26
 msgpack==1.0.8
 numpy==1.26.4
-openai==1.35.3
+openai==0.28.0
 pillow==10.3.0
 pydantic==2.7.4
 pydantic_core==2.18.4
