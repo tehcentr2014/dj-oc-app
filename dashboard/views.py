@@ -129,8 +129,15 @@ def blogTopic(request):
     context = {}
 
     if request.method == 'POST':
+        #Retrieve the blogIdea String from the submitted Form
         blogIdea = request.POST.get('blogIdea')
+        request.session['blogIdea'] = blogIdea
+
         keywords = request.POST.get('keywords')
+        request.session['keywords'] = keywords
+
+        audience = request.POST.get('audience')
+        request.session['audience'] = audience
 
         blogTopics = generateBlogTopicIdeas(blogIdea, keywords)
         if blogTopics:
@@ -145,6 +152,7 @@ def blogTopic(request):
 @login_required
 def blogSections(request):
     if 'blogTopics' in request.session:
+
         pass
     else:
         messages.error(request, "Start by creating blog topic ideas")

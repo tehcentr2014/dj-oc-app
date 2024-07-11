@@ -49,9 +49,13 @@ class Profile(models.Model):
 
 
 class Blog(models.Model):
+    topic = models.CharField(max_length=200)
     title = models.CharField(max_length=200)
     keywords = models.CharField(null=True, blank=True, max_length=300)
-    wordCount = models.CharField(null=True, blank=True, max_length=100)     
+    audience = models.CharField(null=True, blank=True, max_length=100)
+    wordCount = models.CharField(null=True, blank=True, max_length=100)
+    
+    #Related Field  
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
 
 
