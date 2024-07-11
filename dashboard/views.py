@@ -92,7 +92,7 @@ from django.contrib import messages
 
 # Local Imports
 from .forms import ProfileForm, ProfileImageForm
-from .models import Profile
+from .models import Profile, Blog
 from .functions import generateBlogTopicIdeas, generateBlogSectionHeadings
 
 @login_required
@@ -160,3 +160,26 @@ def blogSections(request):
     
     context = {'blogTopics': request.session['blogTopics']}
     return render(request, 'dashboard/blog-sections.html', context)
+
+@login_required
+def saveBlogTopic(request, blogTopic):
+    if 'blogIdea' in request.session and 'keywords' in request.session and 'audience' in request.session and 'blogTopics' in request.session:
+        blog = Blog.objects.create(
+        title = blogTopic,
+        blogIdea = request.session['blogIdea'],
+        keywords = request.session['keywords'],
+        audience = request.session['audience'],
+        profile = request.user.profile)
+        blog.save()
+
+        blogTopics = request.session['blogTopics']
+        blogTopics.remove(blogTopic)
+        request.session['blogTopics'] = blogTopics
+        return redirect('blog-sections')
+    else:
+        return redirect('blog-sections')    
+
+
+@login_required
+def useBlogTopic(request, blogTopic):
+    return redirect('blog-sections')

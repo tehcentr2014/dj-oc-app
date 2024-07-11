@@ -16,7 +16,6 @@ if not api_key:
 # Initialize OpenAI client
 openai.api_key = api_key
 
-
 def generateBlogTopicIdeas(topic, audience, keywords):
     try:
         response = openai.Completion.create(
