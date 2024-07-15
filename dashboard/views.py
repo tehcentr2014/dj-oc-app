@@ -93,7 +93,7 @@ from django.contrib import messages
 # Local Imports
 from .forms import ProfileForm, ProfileImageForm
 from .models import Profile, Blog
-from .functions import generateBlogTopicIdeas, generateBlogSectionHeadings
+from .functions import generateBlogTopicIdeas, generateBlogSectionTitles
 
 @login_required
 def home(request):
@@ -182,4 +182,73 @@ def saveBlogTopic(request, blogTopic):
 
 @login_required
 def useBlogTopic(request, blogTopic):
-    return redirect('blog-sections')
+    context = {}
+    if 'blogIdea' in request.session and 'keywords' in request.session and 'audience' in request.session:
+        blog = Blog.objects.create(
+        title = blogTopic,
+        blogIdea = request.session['blogIdea'],
+        keywords = request.session['keywords'],
+        audience = request.session['audience'],
+        profile = request.user.profile)
+        blog.save()
+        
+        blogSections = generateBlogSectionTitles(blogTopic, request.session['audience'], request.session['keywords'])
+    else:
+        return redirect('blog-topic')
+
+    if len(blogSections) > 0:
+        #Adding the sections to the session
+        request.session['blogSections'] = blogSections
+
+        #Adding the sections to the context
+        context['blogSections'] = blogSections
+        # return redirect('select-blog-sections')
+    else:
+        messages.error(request, "Oops, you beat the AI, try again.")
+        return redirect('blog-topic')
+
+    if request.method == 'POST':    
+        for val in request.POST:
+            if not 'csrfmiddwaretoken' in val:
+                # print(val)
+                section = generateBlogSectionDetails(blogTopic, val, request.session['audience'], request.session['keywords'])
+
+                ##Create Database Record
+                blogSec = BlogSection.objects.create(
+                title = val,
+                body = section,
+                blog = blog)  
+                blogSec.save()
+
+        return redirect ('view-generated-blog', slug=blog.slug)     
+
+    return render(request, 'dashboard/select-blog-sections.html', context)   
+
+
+@login_required
+def viewGeneratedBlog(request, slug):   
+    try: 
+        blog = Blog.objects.get(slug=slug)
+    except:
+        messages.error(request, 'Something went wrong in viewGeneratedBlog')
+        return redirect('blog-topic')    
+
+    blogSections = BlogSection.objects.filter(blog=blog)
+
+    context ={}
+    context['blog'] = blog
+    context['blogSections'] = BlogSections
+
+    return render(request, 'dashboard/view-generated-blog.html', context)
+    
+
+    
+
+
+
+
+
+
+
+
+  

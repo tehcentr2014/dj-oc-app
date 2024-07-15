@@ -60,8 +60,10 @@
                 {%for blog in blogTopics %}
                 <tr>
                   <td>{{blog}}</td>
-                  <td><a href="{% url 'save-blog-topic' blog %}" button class="btn btn-outline-primary">SAVE TOPIC</button></td>
-                  <td><button class="btn btn-primary">USE TOPIC</button></td>
+                  <!-- <td><a href="{% url 'save-blog-topic' blog %}" button class="btn btn-outline-primary">SAVE TOPIC</button></a></td>
+                  <td><a href="{% url 'use-blog-topic' blog %}" button class="btn btn-primary">USE TOPIC</button></a></td> -->
+                  <td><a href="{% url 'save-blog-topic' blog %}" button class="btn btn-outline-primary">SAVE TOPIC</button></a></td>
+                  <td><a href="{% url 'use-blog-topic' blog %}" button class="btn btn-primary">USE TOPIC</button></a></td>
                   <td></td>
                 </tr>
                 {% endfor %}

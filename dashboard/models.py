@@ -59,7 +59,6 @@ class Blog(models.Model):
     #Related Field  
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
 
-
     # Utility Variables
     uniqueId = models.CharField(null=True, blank=True, max_length=100, unique=True)
     slug = models.SlugField(max_length=500, unique=True, blank=True, null=True)
