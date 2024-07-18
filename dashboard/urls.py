@@ -13,5 +13,6 @@ urlpatterns = [
     path('save-blog-topic/<str:blogTopic>/', views.saveBlogTopic, name='save-blog-topic'),
     path('use-blog-topic/<str:blogTopic>/', views.useBlogTopic, name='use-blog-topic'),
     path('view-generated-blog/<slug:slug>/', views.viewGeneratedBlog, name='view-generated-blog'),
+
 ]
 

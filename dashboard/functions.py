@@ -81,7 +81,7 @@ def generateBlogSectionTitles(topic, audience, keywords):
             presence_penalty=0
         )
 
-        # if 'choices' in responce:
+        # if 'choices' in response:
         #     if len(response['choices'])>0:
         #         res = response['choices'][0]['text']
         #     else:
@@ -128,7 +128,7 @@ def generateBlogSectionDetails(blogTopic, sectionTopic, audience, keywords):
         presence_penalty=0
         )
 
-    if 'choices' in responce:
+    if 'choices' in response:
         if len(response['choices'])>0:
             res = response['choices'][0]['text']
             cleanedRes = res.replace('\n', '<br>')
