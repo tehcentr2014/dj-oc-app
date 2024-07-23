@@ -8,7 +8,7 @@
 
   <meta name="copyright" content="MACode ID, https://macodeid.com/">
 
-  <title>SeoGram - SEO Agency Template</title>
+  <title>BlogGenerator - Blog Automation</title>
 
   <link rel="stylesheet" href="../static/assets/css/maicons.css">
 
@@ -27,7 +27,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" data-offset="500">
       <div class="container">
-        <a href="#" class="navbar-brand">Seo<span class="text-primary">Gram.</span></a>
+        <a href="#" class="navbar-brand">Blog<span class="text-primary">Generator</span></a>
 
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -38,7 +38,7 @@
             <li class="nav-item active">
               <a class="nav-link" href="(% url 'home' %)">Home</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="(% url 'about' %)">About</a>
             </li>
             <li class="nav-item">
@@ -46,7 +46,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Blog</a>
-            </li>
+            </li> -->
             
             {% if user.is.authenticated %}
             <li class="nav-item">
@@ -54,7 +54,7 @@
             </li>
             {% else %}
             <li class="nav-item">
-              <a class="btn btn-primary ml-lg-2" href="{% url 'register' %}">Register</a>
+              <a class="btn btn-primary ml-lg-2" href="{% url 'register' %}">Login</a>
             </li>
             {% endif %}
           </ul>
@@ -70,7 +70,7 @@
     <div class="container">
       <div class="row mb-5">
         <div class="col-lg-3 py-3">
-          <h3>SEOGram</h3>
+          <h3>BlogGenerator</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero amet, repellendus eius blanditiis in iusto eligendi iure.</p>
 
           <div class="social-media-button">
@@ -95,7 +95,7 @@
           <h5>Contact Us</h5>
           <p>203 Fake St. Mountain View, San Francisco, California, USA</p>
           <a href="#" class="footer-link">+00 1122 3344 5566</a>
-          <a href="#" class="footer-link">seogram@temporary.com</a>
+          <a href="#" class="footer-link">bloggenerator@test.com</a>
         </div>
         <div class="col-lg-3 py-3">
           <h5>Newsletter</h5>
