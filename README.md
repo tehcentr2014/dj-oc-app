@@ -1,15 +1,13 @@
-## Content Marketing Assistant
-
+## BlogGenerator
 
 
 ### Overview
-The Content Marketing Assistant is a Python App designed to aid in the automatic generation of product descriptions using OpenAI Assistans API. This application simplifies the process by taking user-provided keywords and generating concise descriptions based on predefined criteria.
+The BlogGenerator is a Django App designed to aid in the automatic generation of blog ideas and blog descriptions using OpenAI Assistans API. This application simplifies the process by taking user-provided keywords and generating concise descriptions based on predefined criteria.
 
 ### Features
-- **Keyword Input**: Users can input keywords related to the product for which they want to generate descriptions.
-- **Duplicate Removal**: The application provides a functionality to remove duplicate keywords entered by the user.
-- **Description Generation**: Using the provided keywords, the application generates product descriptions consisting of a title, bullet points, and a detailed description, adhering to specified character limits.
-- **Streamlit Interface**: The application offers a user-friendly interface powered by Streamlit, making it accessible and easy to use.
+- **Keywords Input**: Users can input keywords related to the blog idea for which they want to generate descriptions.
+- **Sections Removal**: The application provides a functionality to remove previously generated blog ideas.
+- **Blog Generation**: Using the previously generated blog ideas, the application generates detaled blog descriptions based on the blog idea, keywords and audience.
 
 ### Installation
 1. Clone the repository:
@@ -38,13 +36,15 @@ The Content Marketing Assistant is a Python App designed to aid in the automatic
     ```
 
 2. Access the application through the provided URL in your browser.
-3. Follow the on-screen instructions to enter keywords and generate product descriptions.
-4. Click the "Create description" button to initiate the description generation process.
-5. Wait for the application to generate the description based on the provided keywords.
-6. The generated description will be displayed on the interface.
+3. Follow the on-screen instructions to enter keywords and generate blog ideas and descriptions.
+4. Click the Blog Topic Generator button to initiate the blog ideas generation process.
+5. Wait for the application to generate the blog ideas based on the provided keywords.
+6. The generated blog ideas will be displayed on the interface.
+6. Delete or choise the blog idea to generate detaled blog description and its will be displayed on the interface.
 
 ### Acknowledgments
 - This project utilizes the OpenAI API for natural language processing.
-- Streamlit is used for creating the user interface.
+- HTML template for landing page: SeoGram – Free Multipage Bootstrap 4 Landing Page Website Template
+- HTML template for dashboard page: Sneat Dashboard PRO – Bootstrap 5 Template
 
 
