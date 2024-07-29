@@ -40,7 +40,7 @@ The BlogGenerator Django App has the starting Landing page and Dasboard section.
 ![image](https://github.com/user-attachments/assets/a0d6ef77-cb79-4aec-9af4-2b04e2b89100)
 
 ### Blog Topic Generator:
-- ** Input fields**: Users can input audience and keywords related to the blog idea for which they want to generate descriptions.
+- **Input fields** : Users can input audience and keywords related to the blog idea for which they want to generate descriptions.
 
 ![image](https://github.com/user-attachments/assets/245d8be4-bca1-4c52-89bf-77c44dc188f5)
 
@@ -53,7 +53,6 @@ The BlogGenerator Django App has the starting Landing page and Dasboard section.
 - **Select Blog Idea**: Provide the option to select the Blog Sections that you would like to include in the Blog
 
 ![image](https://github.com/user-attachments/assets/33dd139a-6a07-4d56-b258-ed6777c49244)
-
 
 - **Generate Full Blog**: 
 
@@ -83,7 +82,7 @@ The BlogGenerator Django App has the starting Landing page and Dasboard section.
 1. Run the application:
 
     ```bash
-    python main.py
+    python manage.py
     ```
 
 2. Access the application through the provided URL in your browser.
@@ -111,5 +110,20 @@ The BlogGenerator Django App has the starting Landing page and Dasboard section.
 - This project utilizes the OpenAI API for natural language processing.
 - HTML template for landing page: SeoGram – Free Multipage Bootstrap 4 Landing Page Website Template
 - HTML template for dashboard page: Sneat Dashboard PRO – Bootstrap 5 Template
+
+## Credits 
+
+- HTML template for landing page: SeoGram – Free Multipage Bootstrap 4 Landing Page Website Template
+- HTML template for dashboard page: Sneat Dashboard PRO – Bootstrap 5 Template
+
+### Content 
+
+- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+
+### Media
+
+- The photos used on the home and sign up page are from https://themewagon.com
+- The images used for the dasboard page were taken from https://themeselection.com/item/sneat-dashboard-pro-bootstrap/
+
 
 
