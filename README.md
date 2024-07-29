@@ -39,11 +39,26 @@ The BlogGenerator Django App has the starting Landing page and Dasboard section.
 
 ![image](https://github.com/user-attachments/assets/a0d6ef77-cb79-4aec-9af4-2b04e2b89100)
 
+### Blog Topic Generator:
+- ** Input fields**: Users can input audience and keywords related to the blog idea for which they want to generate descriptions.
+
+![image](https://github.com/user-attachments/assets/245d8be4-bca1-4c52-89bf-77c44dc188f5)
+
+### Generated Blog Ideas:
+
+![image](https://github.com/user-attachments/assets/b32d6c70-5762-4a36-80af-6bcbffcf1f50)
+
+- **Cancel Topic**: The application provides a functionality to remove previously generated blog ideas.
+- **Use Topic**: Using the previously generated blog ideas, the application generates detaled blog descriptions based on the blog idea, keywords and audience.
+- **Select Blog Idea**: Provide the option to select the Blog Sections that you would like to include in the Blog
+
+![image](https://github.com/user-attachments/assets/33dd139a-6a07-4d56-b258-ed6777c49244)
 
 
-- **Keywords Input**: Users can input keywords related to the blog idea for which they want to generate descriptions.
-- **Sections Removal**: The application provides a functionality to remove previously generated blog ideas.
-- **Blog Generation**: Using the previously generated blog ideas, the application generates detaled blog descriptions based on the blog idea, keywords and audience.
+- **Generate Full Blog**: 
+
+![image](https://github.com/user-attachments/assets/86160bd4-b625-46a7-9897-323146b6b44e)
+
 
 ### Installation
 1. Clone the repository:
@@ -81,7 +96,7 @@ The BlogGenerator Django App has the starting Landing page and Dasboard section.
 ### Deployment
 #### Heroku
 
-*The App live link is: [https://cherry-leaves-5-4-67299393f5ab.herokuapp.com/](https://dj-oc-app-95fdf0716ca4.herokuapp.com/)
+*The App live link is: https://dj-oc-app-95fdf0716ca4.herokuapp.com/
 *Set the runtime.txt Python version 3.12.3 to a Heroku-22 stack currently supported version.
 *The project was deployed to Heroku using the following steps:
 - Log in to Heroku and create an App
