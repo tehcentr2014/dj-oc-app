@@ -16,6 +16,11 @@ The BlogGenerator Django App has the starting Landing page and Dasboard section.
   - link to Home page
   - link to Login page
 
+![1-3](https://github.com/user-attachments/assets/6cde5e22-70ad-4809-8eb4-7697ca50e714)
+
+- __ABOUT US__
+
+![image](https://github.com/user-attachments/assets/3c23385e-df21-4558-aea6-a68b8a0b9420)
 
 
 - **Keywords Input**: Users can input keywords related to the blog idea for which they want to generate descriptions.
