@@ -23,6 +23,16 @@ The BlogGenerator Django App has the starting Landing page and Dasboard section.
 ![image](https://github.com/user-attachments/assets/3c23385e-df21-4558-aea6-a68b8a0b9420)
 
 
+### Dashboard interface:
+- Dashboard main page
+- My Profile link
+- Blog Topic Generator
+- Generated Blog Ideas
+
+![image](https://github.com/user-attachments/assets/a0d6ef77-cb79-4aec-9af4-2b04e2b89100)
+
+
+
 - **Keywords Input**: Users can input keywords related to the blog idea for which they want to generate descriptions.
 - **Sections Removal**: The application provides a functionality to remove previously generated blog ideas.
 - **Blog Generation**: Using the previously generated blog ideas, the application generates detaled blog descriptions based on the blog idea, keywords and audience.
