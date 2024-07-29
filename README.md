@@ -1,8 +1,10 @@
 ## BlogGenerator
 
-
 ### Overview
 The BlogGenerator is a Django App designed to aid in the automatic generation of blog ideas and blog descriptions using OpenAI Assistans API. This application simplifies the process by taking user-provided keywords and generating concise descriptions based on predefined criteria.
+
+![1-4](https://github.com/user-attachments/assets/2cf7a9e0-cc57-4652-852e-4601018069da)
+
 
 ### Features
 - **Keywords Input**: Users can input keywords related to the blog idea for which they want to generate descriptions.
@@ -41,6 +43,20 @@ The BlogGenerator is a Django App designed to aid in the automatic generation of
 5. Wait for the application to generate the blog ideas based on the provided keywords.
 6. The generated blog ideas will be displayed on the interface.
 6. Delete or choise the blog idea to generate detaled blog description and its will be displayed on the interface.
+
+### Deployment
+#### Heroku
+
+*The App live link is: [https://cherry-leaves-5-4-67299393f5ab.herokuapp.com/](https://dj-oc-app-95fdf0716ca4.herokuapp.com/)
+*Set the runtime.txt Python version 3.12.3 to a Heroku-22 stack currently supported version.
+*The project was deployed to Heroku using the following steps:
+- Log in to Heroku and create an App
+- At the Deploy tab, select GitHub as the deployment method.
+- Select your repository name and click Search. Once it is found, click Connect.
+- Select the branch you want to deploy, then click Deploy Branch.
+- The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
+- If the slug size is too large, then add large files not required for the app to the .slugignore file.
+
 
 ### Acknowledgments
 - This project utilizes the OpenAI API for natural language processing.
