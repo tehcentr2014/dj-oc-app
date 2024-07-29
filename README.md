@@ -22,12 +22,20 @@ The BlogGenerator Django App has the starting Landing page and Dasboard section.
 
 ![image](https://github.com/user-attachments/assets/3c23385e-df21-4558-aea6-a68b8a0b9420)
 
+### Login page:
+
+![image](https://github.com/user-attachments/assets/06b61b79-e8cc-4e9e-944d-5fb00bb6bd89)
+
+### Register page:
+
+![image](https://github.com/user-attachments/assets/769002fb-6d33-4b16-ac71-132a02b0cb65)
 
 ### Dashboard interface:
 - Dashboard main page
 - My Profile link
 - Blog Topic Generator
 - Generated Blog Ideas
+- Logout
 
 ![image](https://github.com/user-attachments/assets/a0d6ef77-cb79-4aec-9af4-2b04e2b89100)
 
