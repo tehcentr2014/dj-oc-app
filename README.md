@@ -7,6 +7,17 @@ The BlogGenerator is a Django App designed to aid in the automatic generation of
 
 
 ### Features
+The BlogGenerator Django App has the starting Landing page and Dasboard section.
+
+### Landing Page
+
+- __Navigation Bar__
+
+  - link to Home page
+  - link to Login page
+
+
+
 - **Keywords Input**: Users can input keywords related to the blog idea for which they want to generate descriptions.
 - **Sections Removal**: The application provides a functionality to remove previously generated blog ideas.
 - **Blog Generation**: Using the previously generated blog ideas, the application generates detaled blog descriptions based on the blog idea, keywords and audience.
