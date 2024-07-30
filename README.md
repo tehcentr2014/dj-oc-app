@@ -65,8 +65,9 @@ Every user after registration can fill in detaled My Profile page:
 
 ### Testing
 
-- navigating between pages via the back/forward buttons never break the site, there are no broken links
-- user actions do not cause internal errors on the page or in the console
+- All Python tests were completed successfully, all bugs were fixed  
+- Navigating between pages via the back/forward buttons never break the site
+- User actions do not cause internal errors on the page or in the console
 
 ## Installation
 1. Clone the repository:
@@ -86,20 +87,6 @@ Every user after registration can fill in detaled My Profile page:
     ```
     OPENAI_API_KEY=<your-openai-api-key>
     ```
-
-## Usage
-1. Run the application:
-
-    ```bash
-    python manage.py
-    ```
-
-2. Access the application through the provided URL in your browser.
-3. Follow the on-screen instructions to enter keywords and generate blog ideas and descriptions.
-4. Click the Blog Topic Generator button to initiate the blog ideas generation process.
-5. Wait for the application to generate the blog ideas based on the provided keywords.
-6. The generated blog ideas will be displayed on the interface.
-6. Delete or choise the blog idea to generate detaled blog description and its will be displayed on the interface.
 
 ## Deployment
 #### Heroku
@@ -127,12 +114,24 @@ Every user after registration can fill in detaled My Profile page:
 
 ### Content 
 
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+- The icons were taken from [Font Awesome](https://fontawesome.com/)
 
 ### Media
 
 - The photos used on the home and sign up page are from https://themewagon.com
 - The images used for the dasboard page were taken from https://themeselection.com/item/sneat-dashboard-pro-bootstrap/
 
+## Usage
+1. Run the application:
 
+    ```bash
+    python manage.py
+    ```
+
+2. Access the application through the provided URL in your browser.
+3. Follow the on-screen instructions to enter keywords and generate blog ideas and descriptions.
+4. Click the Blog Topic Generator button to initiate the blog ideas generation process.
+5. Wait for the application to generate the blog ideas based on the provided keywords.
+6. The generated blog ideas will be displayed on the interface.
+6. Delete or choise the blog idea to generate detaled blog description and its will be displayed on the interface.
 
