@@ -62,6 +62,12 @@ Every user after registration can fill in detaled My Profile page:
 
 ![image](https://github.com/user-attachments/assets/be8d1774-28ae-4db2-a13c-d733cd875e4e)
 
+
+### Testing
+
+- navigating between pages via the back/forward buttons never break the site, there are no broken links
+- user actions do not cause internal errors on the page or in the console
+
 ### Installation
 1. Clone the repository:
 
