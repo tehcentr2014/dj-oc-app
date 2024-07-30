@@ -1,11 +1,11 @@
 ## BlogGenerator
 
-### Overview
+## Overview
 The BlogGenerator is a Django App designed to aid in the automatic generation of blog ideas and blog descriptions using OpenAI Assistans API. This application simplifies the process by taking user-provided keywords and generating concise descriptions based on predefined criteria.
 
 ![1-4](https://github.com/user-attachments/assets/2cf7a9e0-cc57-4652-852e-4601018069da)
 
-### Features
+## Features
 The BlogGenerator Django App has the starting Landing page and Dasboard section.
 
 ### Landing Page
@@ -57,7 +57,7 @@ The BlogGenerator Django App has the starting Landing page and Dasboard section.
 
 ![image](https://github.com/user-attachments/assets/86160bd4-b625-46a7-9897-323146b6b44e)
 
-### My Profile
+## My Profile
 Every user after registration can fill in detaled My Profile page:
 
 ![image](https://github.com/user-attachments/assets/be8d1774-28ae-4db2-a13c-d733cd875e4e)
@@ -68,7 +68,7 @@ Every user after registration can fill in detaled My Profile page:
 - navigating between pages via the back/forward buttons never break the site, there are no broken links
 - user actions do not cause internal errors on the page or in the console
 
-### Installation
+## Installation
 1. Clone the repository:
 
     ```bash
@@ -87,7 +87,7 @@ Every user after registration can fill in detaled My Profile page:
     OPENAI_API_KEY=<your-openai-api-key>
     ```
 
-### Usage
+## Usage
 1. Run the application:
 
     ```bash
@@ -101,7 +101,7 @@ Every user after registration can fill in detaled My Profile page:
 6. The generated blog ideas will be displayed on the interface.
 6. Delete or choise the blog idea to generate detaled blog description and its will be displayed on the interface.
 
-### Deployment
+## Deployment
 #### Heroku
 
 *The App live link is: https://dj-oc-app-95fdf0716ca4.herokuapp.com/
@@ -115,7 +115,7 @@ Every user after registration can fill in detaled My Profile page:
 - If the slug size is too large, then add large files not required for the app to the .slugignore file.
 
 
-### Acknowledgments
+## Acknowledgments
 - This project utilizes the OpenAI API for natural language processing.
 - HTML template for landing page: SeoGram – Free Multipage Bootstrap 4 Landing Page Website Template
 - HTML template for dashboard page: Sneat Dashboard PRO – Bootstrap 5 Template
