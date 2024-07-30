@@ -5,7 +5,6 @@ The BlogGenerator is a Django App designed to aid in the automatic generation of
 
 ![1-4](https://github.com/user-attachments/assets/2cf7a9e0-cc57-4652-852e-4601018069da)
 
-
 ### Features
 The BlogGenerator Django App has the starting Landing page and Dasboard section.
 
@@ -32,7 +31,7 @@ The BlogGenerator Django App has the starting Landing page and Dasboard section.
 
 ### Dashboard interface:
 - Dashboard main page
-- My Profile link
+- My Profile
 - Blog Topic Generator
 - Generated Blog Ideas
 - Logout
@@ -58,6 +57,10 @@ The BlogGenerator Django App has the starting Landing page and Dasboard section.
 
 ![image](https://github.com/user-attachments/assets/86160bd4-b625-46a7-9897-323146b6b44e)
 
+### My Profile
+Every user after registration can fill in detaled My Profile page:
+
+![image](https://github.com/user-attachments/assets/be8d1774-28ae-4db2-a13c-d733cd875e4e)
 
 ### Installation
 1. Clone the repository:
